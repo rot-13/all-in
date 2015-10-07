@@ -1,3 +1,6 @@
+# Ignore powder file
+.powder
+
 # Created by https://www.gitignore.io/api/rails,ruby,osx
 
 ### Rails ###
