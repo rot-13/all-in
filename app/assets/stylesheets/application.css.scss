@@ -13,7 +13,12 @@ header {
   color: #FFFFFF;
   line-height: 44px;
   text-align: center;
-  h1 { margin: 0; }
+  h1 {
+    margin: 0;
+    font-size: 22px;
+    color: #FFFFFF;
+
+  }
 
   position: relative;
 
@@ -50,5 +55,19 @@ header {
 
   &:hover {
     background: darken($bg-color, 3);
+  }
+}
+.marketing {
+  padding: 35px 0px;
+  h1 {
+    font-size: 44px;
+    margin: 0;
+    color: #515151;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin: 0;
+    color: #515151;
   }
 }
