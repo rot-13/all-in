@@ -1,0 +1,54 @@
+@import 'normalize-rails';
+@import 'font-awesome';
+
+body {
+  font-family: LucidaGrande;
+  background: #EDEDED;
+}
+
+header {
+  height: 44px;
+  background: #212121;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 44px;
+  text-align: center;
+  h1 { margin: 0; }
+
+  position: relative;
+
+  .action {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    height: 44px;
+    width: 44px;
+    color: white;
+
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.btn {
+  $bg-color: #4A90E2;
+  height: 42px;
+  background: $bg-color;
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 42px;
+  text-decoration: none;
+  display: block;
+
+  &:hover {
+    background: darken($bg-color, 3);
+  }
+}
