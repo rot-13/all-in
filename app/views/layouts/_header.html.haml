@@ -1,0 +1,5 @@
+%header
+  %h1= header_title
+  - if header_action?
+    %a.action{ href: action_url }
+      %i.fa{class: action_icon}

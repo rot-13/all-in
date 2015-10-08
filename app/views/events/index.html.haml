@@ -1,0 +1,9 @@
+- header_action(url: new_event_path, icon: 'fa-plus')
+
+.rows
+  .row.section
+    = t('.title')
+  - @events.each do |event|
+    = link_to event, class: 'row' do
+      %span.primary= event.title
+      %span.secondary= event.created_at.strftime('%b %d')

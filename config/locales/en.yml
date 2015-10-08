@@ -21,3 +21,12 @@
 
 en:
   hello: "Hello world"
+  events:
+    form:
+      title:
+        placeholder: "Enter title"
+    index:
+      title: "My Events"
+  layouts:
+    header:
+      title: "All In"

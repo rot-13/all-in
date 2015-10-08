@@ -40,6 +40,8 @@ bower.json
 # Ignore pow environment settings
 .powenv
 
+.idea
+
 
 ### Ruby ###
 *.gem

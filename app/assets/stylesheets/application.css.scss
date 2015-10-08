@@ -71,3 +71,48 @@ header {
     color: #515151;
   }
 }
+
+.rows {
+  @extend .container;
+  .row {
+    display: block;
+    text-decoration: none;
+    margin: 0;
+    padding: 0 16px;
+    color: #797979;
+    height: 52px;
+    font-size: 18px;
+    line-height: 52px;
+    border-bottom: 1px solid #dddddd;
+
+    .secondary {
+      color: #aaaaaa;
+      float: right;
+
+    }
+
+    &.section {
+      height: 35px;
+      background: #C2C2C2;
+      color: white;
+      font-size: 18px;
+      line-height: 35px;
+    }
+  }
+  a.row {
+    position: relative;
+    padding-right: 6px + 16px;
+    &:after {
+      content: "\f054";
+      @extend .fa;
+      //@extend .fa-chevron-right;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 52px;
+      line-height: 52px;
+      font-size: 0.7em;
+
+    }
+  }
+}

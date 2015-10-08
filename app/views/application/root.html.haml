@@ -1,7 +1,4 @@
-%header
-  %h1 All In
-  %a.action{ href: '#' }
-    %i.fa.fa-user
+- header_action(url: sign_in_path, icon: 'fa-user')
 
 .content
   .container.text-center
@@ -11,7 +8,7 @@
         Event Managment
         %br
         Done Easy
-    %a.btn{ href: '/auth/facebook/'}
+    %a.btn{ href: sign_in_path}
       %i.fa.fa-facebook
       Sign in with Facebook
     %small to start
