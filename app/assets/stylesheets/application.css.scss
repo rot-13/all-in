@@ -57,6 +57,41 @@ header {
     background: darken($bg-color, 3);
   }
 }
+
+.toggle {
+  $bg-color: white;
+  height: 42px;
+  background: $bg-color;
+  font-size: 18px;
+  line-height: 42px;
+  text-decoration: none;
+  display: block;
+  float: left;
+
+  color: #838383;
+  text-align: center;
+
+  &:hover {
+    background: darken($bg-color, 3);
+  }
+  &:last-child{
+    border-left: 1px solid #979797;
+    margin-left: -1px;
+  }
+  &.active {
+    color: white;
+    &.in {
+      background: #7ED321;
+    }
+    &.out {
+      background: #D0021B;
+    }
+  }
+}
+.half {
+  width: 50%;
+}
+
 .marketing {
   padding: 35px 0px;
   h1 {
@@ -79,6 +114,10 @@ header {
     text-decoration: none;
     margin: 0;
     padding: 0 16px;
+    overflow: hidden;
+    &.full {
+      padding: 0;
+    }
     color: #797979;
     height: 52px;
     font-size: 18px;

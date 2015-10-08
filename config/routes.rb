@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get 'auth/facebook/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
 
-  resources :events
+  resources :events do
+    post :rsvp, to: 'rsvp#update'
+  end
 
   root 'application#root'
 end

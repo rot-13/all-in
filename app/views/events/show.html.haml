@@ -1,6 +1,23 @@
-%p#notice= notice
+- header_title(@event.title)
+- header_action(url: '#share', icon: 'fa-envelope')
 
 
-= link_to 'Edit', edit_event_path(@event)
-\|
-= link_to 'Back', events_path
+.rows
+  .actions
+    = link_to t('.in'), event_rsvp_path(@event, rsvp: {response: 0}), method: :post, remote: true, class: [:toggle, :half, :in, (:active if current_rsvp.in?)]
+    = link_to t('.out'), event_rsvp_path(@event, rsvp: {response: 1}), method: :post, remote: true, class: [:toggle, :half, :out, (:active if current_rsvp.out?)]
+
+  .row.section
+    = t('.sections.in', count: @rsvps.in_count)
+  - @rsvps.in.each do |rsvp|
+    .row
+      %span.primary
+        = name(rsvp)
+        %small= extra_attendees(rsvp)
+  .row.section
+    = t('.sections.out', count: @rsvps.out_count)
+  - @rsvps.out.each do |rsvp|
+    .row.disabled
+      %span.primary
+        = rsvp.name
+        %small= extra_attendees(rsvp)

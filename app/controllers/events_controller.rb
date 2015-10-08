@@ -1,4 +1,8 @@
+require_relative '../services/rsvp_counter'
+
 class EventsController < ApplicationController
+  include EventConcern
+
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   before_action :must_be_signed_in, only: [:index, :new, :create, :update, :destroy]
@@ -8,6 +12,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @rsvps = RsvpCounter.new(@event)
   end
 
   def new
@@ -41,11 +46,6 @@ class EventsController < ApplicationController
   end
 
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_event
-    @event = Event.find_by(token: params[:id])
-  end
 
   # Only allow a trusted parameter "white list" through.
   def event_params

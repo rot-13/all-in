@@ -6,4 +6,4 @@
   - @events.each do |event|
     = link_to event, class: 'row' do
       %span.primary= event.title
-      %span.secondary= event.created_at.strftime('%b %d')
+      %span.secondary= event_date(event)
