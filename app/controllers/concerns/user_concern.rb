@@ -4,7 +4,7 @@ module UserConcern
   helper_method :current_user, :user_signed_in?, :sign_in_path
 
   def current_user
-    @_user ||= User.find(session[:user_id])
+    @_user ||= User.where(id: session[:user_id]).first
   end
 
   def user_signed_in?

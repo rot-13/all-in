@@ -4,8 +4,13 @@
 
 .rows
   .actions
-    = link_to t('.in'), event_rsvp_path(@event, rsvp: {response: 0}), method: :post, remote: true, class: [:toggle, :half, :in, (:active if current_rsvp.in?)]
-    = link_to t('.out'), event_rsvp_path(@event, rsvp: {response: 1}), method: :post, remote: true, class: [:toggle, :half, :out, (:active if current_rsvp.out?)]
+    - if user_signed_in?
+      = link_to t('.in'), event_rsvp_path(@event, rsvp: {response: 'in'}), method: :post, class: [:toggle, :half, :in, (:active if current_rsvp.in?)]
+      = link_to t('.out'), event_rsvp_path(@event, rsvp: {response: 'out' }), method: :post, class: [:toggle, :half, :out, (:active if current_rsvp.out?)]
+    - else
+      %a.btn.text-center{ href: sign_in_path}
+        %i.fa.fa-facebook
+        Sign in with Facebook
 
   .row.section
     = t('.sections.in', count: @rsvps.in_count)
@@ -19,5 +24,5 @@
   - @rsvps.out.each do |rsvp|
     .row.disabled
       %span.primary
-        = rsvp.name
+        = name(rsvp)
         %small= extra_attendees(rsvp)

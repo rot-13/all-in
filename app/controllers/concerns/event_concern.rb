@@ -8,6 +8,6 @@ module EventConcern
   end
 
   def current_rsvp
-    @_rsvp ||= @event.rsvps.where(user: current_user).first_or_initialize
+    @_rsvp ||= (@event.present? ? @event.rsvps.where(user: current_user).first_or_initialize : nil)
   end
 end
