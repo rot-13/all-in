@@ -9,4 +9,9 @@ class SessionsController < ApplicationController
     sign_out()
     redirect_to root_url
   end
+
+  def fail
+    flash[:alert] = params[:message].presence || I18n.translate("errors.login-failed")
+    redirect_to root_url
+  end
 end
