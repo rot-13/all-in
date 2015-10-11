@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def create
     user = User.from_facebook(env['omniauth.auth'])
     sign_in(user)

@@ -11,6 +11,11 @@ en:
       sections:
         in: "In (%{count})"
         out: "Out (%{count})"
+      attendees:
+        n1: "Just Me"
+        n2: "+1"
+        n3: "+2"
+        n4: "+3"
   layouts:
     header:
       title: "All In"

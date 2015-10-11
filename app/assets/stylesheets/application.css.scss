@@ -13,11 +13,11 @@ header {
   color: #FFFFFF;
   line-height: 44px;
   text-align: center;
-  h1 {
+  h1, a {
     margin: 0;
     font-size: 22px;
     color: #FFFFFF;
-
+    text-decoration: none;
   }
 
   position: relative;
@@ -86,12 +86,17 @@ header {
   &:hover {
     background: darken($bg-color, 3);
   }
-  &:last-child{
-    border-left: 1px solid #979797;
-    margin-left: -1px;
+  border-left: 1px solid #EDEDED;
+  margin-left: -1px;
+
+  &:first-child{
+    border-left: none;
+    margin-left: 0;
   }
   &.active {
     color: white;
+    background: #838383;
+
     &.in {
       background: #7ED321;
     }
@@ -165,5 +170,16 @@ header {
       font-size: 0.7em;
 
     }
+  }
+
+  .attendees{
+    //clear: both;
+    //overflow: hidden;
+    border-top: 1px solid #EDEDED;
+    .toggle {
+      width: 25%;
+      //border-left:
+    }
+
   }
 }
