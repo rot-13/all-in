@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
   def show
     @rsvps = RsvpCounter.new(@event)
+    session[:redirect_url] = event_path
   end
 
   def new
