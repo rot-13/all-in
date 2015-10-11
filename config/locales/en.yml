@@ -17,5 +17,8 @@ en:
         n3: "+2"
         n4: "+3"
   layouts:
+    application:
+      title: "All In"
+      description: "All in is an app"
     header:
       title: "All In"
