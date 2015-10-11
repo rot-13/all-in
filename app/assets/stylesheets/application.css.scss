@@ -146,6 +146,10 @@ header {
       float: right;
 
     }
+    
+    &.disabled {
+      opacity: 0.5;
+    }
 
     &.section {
       height: 35px;
@@ -182,4 +186,12 @@ header {
     }
 
   }
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #C2C2C2;
+  vertical-align: middle;
 }

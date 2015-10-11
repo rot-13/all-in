@@ -22,6 +22,7 @@
   - @rsvps.in.each do |rsvp|
     .row
       %span.primary
+        = avatar(rsvp)
         = name(rsvp)
         %small= extra_attendees(rsvp)
   .row.section
@@ -29,5 +30,6 @@
   - @rsvps.out.each do |rsvp|
     .row.disabled
       %span.primary
+        = avatar(rsvp)
         = name(rsvp)
         %small= extra_attendees(rsvp)
