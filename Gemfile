@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
 
 gem 'rails', '4.2.4'
 gem 'pg'
@@ -16,6 +17,8 @@ gem 'haml', '~> 4.0.7'
 gem 'font-awesome-rails', '~> 4.4.0.0'
 gem 'turbolinks'
 gem "haml-rails", "~> 0.9" # HAML GENERATORS
+
+gem "rails_12factor"
 
 group :development, :test do
   gem 'byebug'
