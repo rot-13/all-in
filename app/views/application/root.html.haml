@@ -1,14 +1,14 @@
-- header_action(url: sign_in_path, icon: 'fa-user')
 
-.content
-  .container.text-center
-    .marketing
-      %h1 All In
-      %h2
-        Event Managment
-        %br
-        Done Easy
-    %a.btn{ href: sign_in_path}
-      %i.fa.fa-facebook
-      Sign in with Facebook
-    %small to start
+%header.text-center
+  .container.padded
+    %h1= t('.title')
+    %h2!= t('.subtitle')
+
+.container.padded.text-center
+  %br
+  %a.btn.btn-facebook{ href: sign_in_path}
+    %i.fa.fa-facebook
+    = t('facebook')
+  %small
+    %br
+    = t('.footer')

@@ -1,4 +1,10 @@
 en:
+  facebook: 'Sign in with Facebook'
+  application:
+    root:
+      title: 'Game Night'
+      subtitle: 'Event Management <br> Done Easy'
+      footer: 'To start creating event'
   rsvp:
     extra-attendees: "+%{count}"
   events:
@@ -7,6 +13,7 @@ en:
         placeholder: "Enter title"
     index:
       title: "My Events"
+      new_event: "Create a new event"
     show:
       sections:
         in:
@@ -31,6 +38,8 @@ en:
       whatsapp: "Share on Whatsapp"
       footer:
         home: "Create & See your events @ Gamenight.xyz"
+    new:
+      title: "Create new event"
   layouts:
     application:
       title: "All In"

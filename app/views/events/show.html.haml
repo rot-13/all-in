@@ -20,7 +20,7 @@
     - else
       %a.btn-facebook.btn.text-center{ href: sign_in_path}
         %i.fa.fa-facebook
-        Sign in with Facebook
+        = t('facebook')
     - if current_rsvp.in?
       .attendees><
         - (1..4).each do |idx|
@@ -54,7 +54,7 @@
 %footer
   .container.padded
     - if browser.mobile?
-      = link_to whatsapp_link(@event), class: 'btn btn-whatsapp' do
+      = link_to whatsapp_link(@event), class: 'btn btn-whatsapp with-icon' do
         %i.fa.fa-whatsapp
         %span= t(".whatsapp")
 

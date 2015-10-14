@@ -1,5 +1,7 @@
-%h1 New event
+%header
+  .container.padded
+    %h1= t('.title')
 
-= render 'form'
+.container.padded
+  = render 'form'
 
-= link_to 'Back', events_path

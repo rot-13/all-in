@@ -20,6 +20,12 @@ header {
     font-weight: 200;
     margin: 10px 0;
   }
+  h2 {
+    font-size: 36px;
+    //line-height: 94px;
+    font-weight: 100;
+    margin: 10px 0;
+  }
   p {
     font-size: 18px;
   }
@@ -107,12 +113,8 @@ footer {
       background: darken(#3B5998, 3);
     }
   }
-  &.btn-whatsapp {
-    background: #5CBE4A;
-    color: white;
-    &:hover {
-      background: darken(#5CBE4A, 3);
-    }
+
+  &.with-icon {
     i.fa {
       float: left;
       height: 42px;
@@ -120,6 +122,15 @@ footer {
       background: rgba(black, 0.2);
       line-height: 42px;
     }
+  }
+
+  &.btn-whatsapp {
+    background: #5CBE4A;
+    color: white;
+    &:hover {
+      background: darken(#5CBE4A, 3);
+    }
+
   }
 
   &.btn-rsvp {
@@ -241,7 +252,6 @@ footer {
   &.active {
     color: white;
     background: #7ED321;
-
   }
 }
 
@@ -251,7 +261,6 @@ footer {
     text-align: center;
     width: 24.9%;
   }
-
 }
 
 .avatar {
@@ -261,5 +270,4 @@ footer {
   background: rgba(#C2C2C2, 0.4);
   vertical-align: middle;
   display: inline-block;
-
 }

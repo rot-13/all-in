@@ -1,8 +1,12 @@
-- header_action(url: new_event_path, icon: 'fa-plus')
+
+%header
+  .container.padded
+    %h1= t('.title')
+    = link_to new_event_path, class: 'btn with-icon' do
+      %i.fa.fa-plus
+      = t('.new_event')
 
 .rows
-  .row.section
-    = t('.title')
   - @events.each do |event|
     = link_to event, class: 'row' do
       %span.primary= event.title
