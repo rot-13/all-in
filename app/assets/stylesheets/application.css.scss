@@ -69,6 +69,7 @@ footer {
   color: #FFFFFF;
   line-height: 30px;
   text-align: center;
+  z-index: 1000;
   &.flash-alert {
     background: #e24d44;
   }
