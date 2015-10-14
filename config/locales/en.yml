@@ -28,6 +28,9 @@ en:
        one: "1 person attending"
        other: "%{count} people attending"
       empty: "No one yet"
+      whatsapp: "Share on Whatsapp"
+      footer:
+        home: "Create & See your events @ Gamenight.xyz"
   layouts:
     application:
       title: "All In"

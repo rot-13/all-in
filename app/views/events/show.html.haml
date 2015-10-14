@@ -1,6 +1,6 @@
 
 %header.event-header
-  .container
+  .container.padded
     %h1= @event.title
     %p.organizer= t('.started_by', organizer: @event.organizer.name)
     %hr
@@ -12,8 +12,7 @@
           - (1...rsvp.attendees).each do
             .avatar.default
 
-
-.rows
+.container.padded
   .actions
     - if user_signed_in?
       = link_to t('.in'), event_rsvp_path(@event, rsvp: {response: 'in'}), method: :post, class: [:btn, 'btn-rsvp', 'btn-in', (:active if current_rsvp.in?)]
@@ -27,7 +26,7 @@
         - (1..4).each do |idx|
           = link_to t(".attendees.n#{idx}"), event_rsvp_path(@event, rsvp: {attendees: idx}), method: :post, class: [:toggle, :attendees, (:active if current_rsvp.attendees >= idx)]
 
-
+.rows
   .row.section
     = t('.sections.in', count: @rsvps.in_count)
   - @rsvps.in.each do |rsvp|
@@ -50,3 +49,14 @@
   - if @rsvps.out.empty?
     .row.empty
       = t('.empty')
+
+
+%footer
+  .container.padded
+    -#- if browser.mobile?
+    = link_to "whatsapp://send?text=#{@event.title}! Who's in? - #{event_url}", class: 'btn btn-whatsapp' do
+      %i.fa.fa-whatsapp
+      %span= t(".whatsapp")
+
+    %br
+    = link_to t('.footer.home'), root_path, class: 'footer_link'

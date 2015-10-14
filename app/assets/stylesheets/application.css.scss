@@ -4,6 +4,7 @@
 *, *:before, *:after {
   margin: 0; padding: 0;
 }
+
 body {
   font-family: system, -apple-system, ".SFNSDisplay-Regular", "Helvetica Neue", "Lucida Grande", sans-serif;
   background: #EDEDED;
@@ -12,7 +13,7 @@ body {
 header {
   background-image: linear-gradient(134deg, #3023AE 0%, #C86DD7 100%);
   color: white;
-  padding: 20px;
+  padding: 20px 0;
   h1 {
     font-size: 80px;
     line-height: 94px;
@@ -31,6 +32,16 @@ header {
   }
 }
 
+footer {
+  margin: 50px 0;
+  text-align: center;
+  .footer_link {
+    text-decoration: none;
+    font-size: 12px;
+    color: #5E4F6E;
+  }
+}
+
 .avatar-row {
   padding-top: 5px;
   .avatar {
@@ -38,7 +49,6 @@ header {
     height: 25px;
   }
 }
-
 
 .flash {
   height: 30px;
@@ -59,10 +69,14 @@ header {
 .container {
   max-width: 700px;
   margin: 0 auto;
+  &.padded {
+    padding: 0 20px;
+  }
+
 }
 
 .actions {
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .btn {
@@ -93,6 +107,21 @@ header {
       background: darken(#3B5998, 3);
     }
   }
+  &.btn-whatsapp {
+    background: #5CBE4A;
+    color: white;
+    &:hover {
+      background: darken(#5CBE4A, 3);
+    }
+    i.fa {
+      float: left;
+      height: 42px;
+      width: 42px;
+      background: rgba(black, 0.2);
+      line-height: 42px;
+    }
+  }
+
   &.btn-rsvp {
     width: -webkit-calc(50% - 10px);
     width: calc(50% - 10px);
@@ -166,6 +195,7 @@ header {
       line-height: 35px;
     }
   }
+
   a.row {
     position: relative;
     padding-right: 6px + 16px;
@@ -181,17 +211,7 @@ header {
 
     }
   }
-
-  .attendees{
-    margin-top: 9px;
-    .toggle {
-      text-align: center;
-      width: 24.9%;
-    }
-
-  }
 }
-
 
 
 .toggle {
@@ -223,6 +243,15 @@ header {
     background: #7ED321;
 
   }
+}
+
+.attendees{
+  margin-top: 9px;
+  .toggle {
+    text-align: center;
+    width: 24.9%;
+  }
+
 }
 
 .avatar {
