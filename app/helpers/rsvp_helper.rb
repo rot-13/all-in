@@ -1,7 +1,7 @@
 module RsvpHelper
 
   def avatar(rsvp)
-    image_tag avatar_url(rsvp), class: 'avatar'
+    image_tag avatar_url(rsvp), class: 'avatar', title: name(rsvp)
   end
 
   def avatar_url(rsvp)
