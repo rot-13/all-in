@@ -17,7 +17,7 @@ header {
     font-size: 80px;
     line-height: 94px;
     font-weight: 200;
-    margin: 0;
+    margin: 10px 0;
   }
   p {
     font-size: 18px;
@@ -33,15 +33,19 @@ header {
 
 .avatar-row {
   padding-top: 5px;
+  .avatar {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 
 .flash {
-  height: 22px;
+  height: 30px;
   background: #9cc3e2;
-  font-size: 12px;
+  font-size: 14px;
   color: #FFFFFF;
-  line-height: 22px;
+  line-height: 30px;
   text-align: center;
   &.flash-alert {
     background: #e24d44;
@@ -147,8 +151,7 @@ header {
     }
 
     &.empty {
-      //text-align: center;
-      //font-size: 1rem;
+      opacity: 0.6;
     }
     
     &.disabled {
@@ -169,7 +172,6 @@ header {
     &:after {
       content: "\f054";
       @extend .fa;
-      //@extend .fa-chevron-right;
       position: absolute;
       right: 3px;
       top: 0;
@@ -181,15 +183,10 @@ header {
   }
 
   .attendees{
-    //clear: both;
-    //overflow: hidden;
-    display: flex;
-    //border-top: 1px solid #EDEDED;
-    margin: 9px 0;
+    margin-top: 9px;
     .toggle {
       text-align: center;
-      width: 25%;
-      //border-left:
+      width: 24.9%;
     }
 
   }
@@ -204,8 +201,9 @@ header {
   font-size: 18px;
   line-height: 42px;
   text-decoration: none;
-  display: block;
-  float: left;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 
   color: #838383;
   text-align: center;
@@ -222,18 +220,9 @@ header {
   }
   &.active {
     color: white;
-    background: #838383;
+    background: #7ED321;
 
-    &.in {
-      background: #7ED321;
-    }
-    &.out {
-      background: #D0021B;
-    }
   }
-}
-.half {
-  width: 50%;
 }
 
 .avatar {
@@ -242,4 +231,5 @@ header {
   border-radius: 100%;
   background: #C2C2C2;
   vertical-align: middle;
+  display: inline-block;
 }

@@ -9,6 +9,8 @@
       .avatar-row
         - @rsvps.in.each do |rsvp|
           = avatar(rsvp)
+          - (1...rsvp.attendees).each do
+            .avatar.default
 
 
 .rows
@@ -21,9 +23,9 @@
         %i.fa.fa-facebook
         Sign in with Facebook
     - if current_rsvp.in?
-      .attendees
+      .attendees><
         - (1..4).each do |idx|
-          = link_to t(".attendees.n#{idx}"), event_rsvp_path(@event, rsvp: {attendees: idx}), method: :post, class: [:toggle, :attendees, (:active if current_rsvp.attendees == idx)]
+          = link_to t(".attendees.n#{idx}"), event_rsvp_path(@event, rsvp: {attendees: idx}), method: :post, class: [:toggle, :attendees, (:active if current_rsvp.attendees >= idx)]
 
 
   .row.section
