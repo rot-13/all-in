@@ -4,7 +4,7 @@ class RsvpCounter
 
   def initialize(event)
     @event = event
-    @rsvps = @event.rsvps.includes(:user).all
+    @rsvps = @event.rsvps.includes(:user).order(:updated_at).all
     @in = @rsvps.select(&:in?)
     @in_count = @in.map(&:attendees).inject(&:+) || 0
     @out = @rsvps.select(&:out?)
