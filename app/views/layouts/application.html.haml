@@ -6,6 +6,7 @@
     %title
       - if @event
         = @event.title
+        = "(#{@rsvps.in_count})"
         |
       = t('.title')
     %meta{:name => 'description', :content => t('.description')}
