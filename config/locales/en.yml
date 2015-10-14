@@ -42,7 +42,7 @@ en:
       title: "Create new event"
   layouts:
     application:
-      title: "All In"
-      description: "All in is an app"
+      title: "Game Night"
+      description: "Game Night is event management done easy!"
     header:
-      title: "All In"
+      title: "Game Night"
