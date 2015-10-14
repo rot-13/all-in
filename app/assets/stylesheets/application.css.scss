@@ -1,38 +1,40 @@
 @import 'normalize-rails';
 @import 'font-awesome';
 
+*, *:before, *:after {
+  margin: 0; padding: 0;
+}
 body {
   font-family: system, -apple-system, ".SFNSDisplay-Regular", "Helvetica Neue", "Lucida Grande", sans-serif;
   background: #EDEDED;
 }
 
 header {
-  height: 44px;
-  background: #212121;
-  font-size: 16px;
-  color: #FFFFFF;
-  line-height: 44px;
-  text-align: center;
-  h1, a {
+  background-image: linear-gradient(134deg, #3023AE 0%, #C86DD7 100%);
+  color: white;
+  padding: 20px;
+  h1 {
+    font-size: 80px;
+    line-height: 94px;
+    font-weight: 200;
     margin: 0;
-    font-size: 22px;
-    color: #FFFFFF;
-    text-decoration: none;
   }
-
-  position: relative;
-
-  .action {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: block;
-    height: 44px;
-    width: 44px;
-    color: white;
-
+  p {
+    font-size: 18px;
+  }
+  hr {
+    margin: 10px 0;
+    height: 1px;
+    background: rgba(white, 0.6);
+    border: none;
+    outline: none;
   }
 }
+
+.avatar-row {
+  padding-top: 5px;
+}
+
 
 .flash {
   height: 22px;
@@ -55,20 +57,145 @@ header {
   margin: 0 auto;
 }
 
+.actions {
+  padding: 20px;
+}
+
 .btn {
-  $bg-color: #4A90E2;
+  $bg-color: #FFFFFF;
   height: 42px;
   background: $bg-color;
+  color: #8A8A8A;
   font-size: 18px;
-  color: #FFFFFF;
   line-height: 42px;
   text-decoration: none;
   display: block;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.50);
+  border-radius: 2px;
+  text-align: center;
 
   &:hover {
     background: darken($bg-color, 3);
   }
+
+  i.fa {
+    margin-right: 10px;
+  }
+
+  &.btn-facebook {
+    background: #3B5998;
+    color: white;
+    &:hover {
+      background: darken(#3B5998, 3);
+    }
+  }
+  &.btn-rsvp {
+    width: -webkit-calc(50% - 10px);
+    width: calc(50% - 10px);
+    display: inline-block;
+    &.btn-out {
+      float: right;
+    }
+    &.active {
+      color: white;
+
+      &.btn-in {
+        background: #7ED321;
+      }
+      &.btn-out {
+        background: #D0021B;
+      }
+    }
+  }
 }
+
+.marketing {
+  padding: 35px 0px;
+  h1 {
+    font-size: 44px;
+    margin: 0;
+    color: #515151;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin: 0;
+    color: #515151;
+  }
+}
+
+.rows {
+  @extend .container;
+  .row {
+    display: block;
+    text-decoration: none;
+    margin: 0;
+    padding: 0 20px;
+    overflow: hidden;
+    &.full {
+      padding: 0;
+    }
+    color: #797979;
+    height: 52px;
+    font-size: 18px;
+    line-height: 52px;
+    border-bottom: 1px solid #dddddd;
+
+    .secondary {
+      color: #aaaaaa;
+      float: right;
+    }
+
+    &.empty {
+      //text-align: center;
+      //font-size: 1rem;
+    }
+    
+    &.disabled {
+      opacity: 0.5;
+    }
+
+    &.section {
+      height: 35px;
+      background: #9454C9;
+      color: white;
+      font-size: 18px;
+      line-height: 35px;
+    }
+  }
+  a.row {
+    position: relative;
+    padding-right: 6px + 16px;
+    &:after {
+      content: "\f054";
+      @extend .fa;
+      //@extend .fa-chevron-right;
+      position: absolute;
+      right: 3px;
+      top: 0;
+      height: 52px;
+      line-height: 52px;
+      font-size: 0.7em;
+
+    }
+  }
+
+  .attendees{
+    //clear: both;
+    //overflow: hidden;
+    display: flex;
+    //border-top: 1px solid #EDEDED;
+    margin: 9px 0;
+    .toggle {
+      text-align: center;
+      width: 25%;
+      //border-left:
+    }
+
+  }
+}
+
+
 
 .toggle {
   $bg-color: white;
@@ -107,85 +234,6 @@ header {
 }
 .half {
   width: 50%;
-}
-
-.marketing {
-  padding: 35px 0px;
-  h1 {
-    font-size: 44px;
-    margin: 0;
-    color: #515151;
-  }
-
-  h2 {
-    font-size: 22px;
-    margin: 0;
-    color: #515151;
-  }
-}
-
-.rows {
-  @extend .container;
-  .row {
-    display: block;
-    text-decoration: none;
-    margin: 0;
-    padding: 0 16px;
-    overflow: hidden;
-    &.full {
-      padding: 0;
-    }
-    color: #797979;
-    height: 52px;
-    font-size: 18px;
-    line-height: 52px;
-    border-bottom: 1px solid #dddddd;
-
-    .secondary {
-      color: #aaaaaa;
-      float: right;
-
-    }
-    
-    &.disabled {
-      opacity: 0.5;
-    }
-
-    &.section {
-      height: 35px;
-      background: #C2C2C2;
-      color: white;
-      font-size: 18px;
-      line-height: 35px;
-    }
-  }
-  a.row {
-    position: relative;
-    padding-right: 6px + 16px;
-    &:after {
-      content: "\f054";
-      @extend .fa;
-      //@extend .fa-chevron-right;
-      position: absolute;
-      right: 3px;
-      top: 0;
-      height: 52px;
-      line-height: 52px;
-      font-size: 0.7em;
-
-    }
-  }
-
-  .attendees{
-    //clear: both;
-    //overflow: hidden;
-    border-top: 1px solid #EDEDED;
-    .toggle {
-      width: 25%;
-      //border-left:
-    }
-
-  }
 }
 
 .avatar {

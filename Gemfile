@@ -19,6 +19,7 @@ gem 'turbolinks'
 gem "haml-rails", "~> 0.9" # HAML GENERATORS
 
 gem "rails_12factor"
+gem 'browser'
 
 group :development, :test do
   gem 'byebug'

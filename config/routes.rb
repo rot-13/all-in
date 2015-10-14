@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'auth/failure', to: 'sessions#fail'
   get 'logout', to: 'sessions#destroy'
 
-  resources :events do
+  resources :events, path: 'e' do
     post :rsvp, to: 'rsvp#update'
   end
 

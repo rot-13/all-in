@@ -9,13 +9,25 @@ en:
       title: "My Events"
     show:
       sections:
-        in: "In (%{count})"
-        out: "Out (%{count})"
+        in:
+          zero: "In"
+          one: "In (%{count})"
+          other: "In (%{count})"
+        out:
+          zero: "Out"
+          one: "Out (%{count})"
+          other: "Out (%{count})"
       attendees:
         n1: "Just Me"
         n2: "+1"
         n3: "+2"
         n4: "+3"
+      started_by: "Started by %{organizer}"
+      attending:
+       zero: "no one in yet"
+       one: "1 person attending"
+       other: "%{count} people attending"
+      empty: "No one yet"
   layouts:
     application:
       title: "All In"

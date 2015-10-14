@@ -1,20 +1,29 @@
-- header_title(@event.title)
-- header_action(url: '#share', icon: 'fa-envelope')
+
+%header.event-header
+  .container
+    %h1= @event.title
+    %p.organizer= t('.started_by', organizer: @event.organizer.name)
+    %hr
+    - if @rsvps.in_count > 0
+      %p.attending= t('.attending', count: @rsvps.in_count)
+      .avatar-row
+        - @rsvps.in.each do |rsvp|
+          = avatar(rsvp)
 
 
 .rows
   .actions
     - if user_signed_in?
-      = link_to t('.in'), event_rsvp_path(@event, rsvp: {response: 'in'}), method: :post, class: [:toggle, :half, :in, (:active if current_rsvp.in?)]
-      = link_to t('.out'), event_rsvp_path(@event, rsvp: {response: 'out' }), method: :post, class: [:toggle, :half, :out, (:active if current_rsvp.out?)]
+      = link_to t('.in'), event_rsvp_path(@event, rsvp: {response: 'in'}), method: :post, class: [:btn, 'btn-rsvp', 'btn-in', (:active if current_rsvp.in?)]
+      = link_to t('.out'), event_rsvp_path(@event, rsvp: {response: 'out' }), method: :post, class: [:btn, 'btn-rsvp', 'btn-out', (:active if current_rsvp.out?)]
     - else
-      %a.btn.text-center{ href: sign_in_path}
+      %a.btn-facebook.btn.text-center{ href: sign_in_path}
         %i.fa.fa-facebook
         Sign in with Facebook
-  - if current_rsvp.in?
-    .attendees
-      - (1..4).each do |idx|
-        = link_to t(".attendees.n#{idx}"), event_rsvp_path(@event, rsvp: {attendees: idx}), method: :post, class: [:toggle, :attendees, (:active if current_rsvp.attendees == idx)]
+    - if current_rsvp.in?
+      .attendees
+        - (1..4).each do |idx|
+          = link_to t(".attendees.n#{idx}"), event_rsvp_path(@event, rsvp: {attendees: idx}), method: :post, class: [:toggle, :attendees, (:active if current_rsvp.attendees == idx)]
 
 
   .row.section
@@ -25,6 +34,9 @@
         = avatar(rsvp)
         = name(rsvp)
         %small= extra_attendees(rsvp)
+  - if @rsvps.in.empty?
+    .row.empty
+      = t('.empty')
   .row.section
     = t('.sections.out', count: @rsvps.out_count)
   - @rsvps.out.each do |rsvp|
@@ -33,3 +45,6 @@
         = avatar(rsvp)
         = name(rsvp)
         %small= extra_attendees(rsvp)
+  - if @rsvps.out.empty?
+    .row.empty
+      = t('.empty')
