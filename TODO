@@ -9,3 +9,6 @@
 * Add logout and user info
 
 * Better Facebook OG meta tags
+
+* Fix facebook #_=_ in callback url
+* Remeber me
