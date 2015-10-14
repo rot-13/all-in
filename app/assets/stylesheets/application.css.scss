@@ -59,6 +59,10 @@ footer {
 }
 
 .flash {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 30px;
   background: #9cc3e2;
   font-size: 14px;
