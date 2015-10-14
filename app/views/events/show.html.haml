@@ -53,10 +53,10 @@
 
 %footer
   .container.padded
-    -#- if browser.mobile?
-    = link_to "whatsapp://send?text=#{@event.title}! Who's in? - #{event_url}", class: 'btn btn-whatsapp' do
-      %i.fa.fa-whatsapp
-      %span= t(".whatsapp")
+    - if browser.mobile?
+      = link_to whatsapp_link(@event), class: 'btn btn-whatsapp' do
+        %i.fa.fa-whatsapp
+        %span= t(".whatsapp")
 
     %br
     = link_to t('.footer.home'), root_path, class: 'footer_link'
