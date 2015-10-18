@@ -1,0 +1,7 @@
+$ ->
+  pusher = new Pusher('<%= Pusher.key %>')
+
+class EventNotificationListener
+  constructor: (event_id) ->
+    @channel = pusher.subscribe("event_#{event_id}")
+    @channel.bind 'change', -> location.reload()
