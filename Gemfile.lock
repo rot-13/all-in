@@ -74,6 +74,7 @@ GEM
       haml (~> 4.0.0)
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
+    httpclient (2.6.0.1)
     i18n (0.7.0)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
@@ -109,6 +110,11 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     pg (0.18.3)
+    pusher (0.14.6)
+      httpclient (~> 2.5)
+      multi_json (~> 1.0)
+      pusher-signature (~> 0.1.8)
+    pusher-signature (0.1.8)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -190,6 +196,7 @@ DEPENDENCIES
   normalize-rails
   omniauth-facebook
   pg
+  pusher
   rails (= 4.2.4)
   rails_12factor
   sass-rails (~> 5.0)
@@ -199,4 +206,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.5
+   1.10.6
