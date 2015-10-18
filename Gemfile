@@ -5,6 +5,8 @@ ruby '2.0.0'
 gem 'rails', '4.2.4'
 gem 'pg'
 
+gem 'pusher'
+
 gem 'controller_support'
 gem 'omniauth-facebook'
 

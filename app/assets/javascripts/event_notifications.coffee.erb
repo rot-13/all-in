@@ -1,0 +1,6 @@
+pusher = new Pusher('<%= Pusher.key %>')
+
+class window.EventNotificationListener
+  constructor: (event_id) ->
+    @channel = pusher.subscribe("event_#{event_id}")
+    @channel.bind 'change', -> Turbolinks.visit()

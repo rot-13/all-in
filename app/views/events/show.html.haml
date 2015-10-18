@@ -1,4 +1,3 @@
-
 %header.event-header
   .container.padded
     = @event.date
@@ -69,3 +68,6 @@
       = link_to t('.edit'), edit_event_path(@event), class: 'link'
     %br
     = link_to t('.footer.home'), root_path, class: 'footer_link'
+
+:javascript
+  new EventNotificationListener("#{@event.token}")
