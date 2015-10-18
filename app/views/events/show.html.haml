@@ -4,8 +4,8 @@
     %h1= @event.title
     %p.organizer= t('.started_by', organizer: @event.organizer.name)
     %hr
+    %p.attending= t('.attending', count: @rsvps.in_count)
     - if @rsvps.in_count > 0
-      %p.attending= t('.attending', count: @rsvps.in_count)
       .avatar-row
         - @rsvps.in.each do |rsvp|
           = avatar(rsvp)
@@ -58,5 +58,8 @@
         %i.fa.fa-whatsapp
         %span= t(".whatsapp")
 
+    - if user_signed_in? && @event.organizer == current_user
+      %br
+      = link_to t('.edit'), edit_event_path(@event), class: 'link'
     %br
     = link_to t('.footer.home'), root_path, class: 'footer_link'

@@ -31,15 +31,19 @@ en:
         n4: "+3"
       started_by: "Started by %{organizer}"
       attending:
-       zero: "no one in yet"
+       zero: "No one in yet"
        one: "1 person attending"
        other: "%{count} people attending"
       empty: "No one yet"
       whatsapp: "Share on Whatsapp"
       footer:
         home: "Create & See your events @ Gamenight.xyz"
+      edit: "Edit your event"
     new:
       title: "Create new event"
+    edit:
+      title: "Edit your event"
+      back: "Back"
   layouts:
     application:
       title: "Game Night"
