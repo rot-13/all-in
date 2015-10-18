@@ -1,6 +1,7 @@
 
 %header.event-header
   .container.padded
+    = @event.date
     %h1= @event.title
     %p.organizer= t('.started_by', organizer: @event.organizer.name)
     %hr

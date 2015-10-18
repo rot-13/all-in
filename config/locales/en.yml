@@ -11,6 +11,8 @@ en:
     form:
       title:
         placeholder: "Enter title"
+      date:
+        placeholder: "Add date to event (optional)"
     index:
       title: "My Events"
       new_event: "Create a new event"
