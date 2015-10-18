@@ -5,6 +5,8 @@ class Event < ActiveRecord::Base
   TOKEN_LENGTH = 4
   after_initialize :set_default_values
 
+  validates :title, presence: true
+
   def to_param
     self.token
   end

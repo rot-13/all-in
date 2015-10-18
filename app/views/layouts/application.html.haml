@@ -4,7 +4,7 @@
     %meta{:content => 'text/html; charset=utf-8', 'http-equiv' => 'Content-type'}
     %meta{:content => 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible'}
     %title
-      - if @event
+      - if @event && @event.title.present?
         = @event.title
         - if @rsvps
           = "(#{@rsvps.in_count})"
@@ -16,7 +16,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     %link{:rel => 'shortcut icon', :href => image_path('favicon.png')}
     %link{:rel => 'icon', sizes: :any, mask: true, :href => image_path('chip.svg')}
-    %meta{:name => 'theme-color', :content => "#3023AE"}
+    %meta{:name => 'theme-color', :content => "#7A47C2"}
     %link{:rel => 'apple-touch-icon', sizes: :any, :href => image_path('chip.png')}
 
     = csrf_meta_tags

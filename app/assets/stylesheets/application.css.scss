@@ -3,6 +3,7 @@
 
 *, *:before, *:after {
   margin: 0; padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -78,6 +79,9 @@ footer {
 .text-center {
   text-align: center;
 }
+.pull-right {
+  float: right;
+}
 
 .container {
   max-width: 700px;
@@ -118,6 +122,14 @@ footer {
     color: white;
     &:hover {
       background: darken(#3B5998, 3);
+    }
+  }
+
+  &.btn-submit {
+    background: #7A47C2;
+    color: white;
+    &:hover {
+      background: darken(#7A47C2, 3);
     }
   }
 
@@ -278,4 +290,27 @@ footer {
       opacity:0.6;
     }
   }
+}
+
+input[type=text] {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+input[type=submit] {
+  display: block;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#error_explanation {
+  background-color: rgba(255, 22, 37, 0.71);
+  color: white;
+  padding: 20px 40px;
 }
