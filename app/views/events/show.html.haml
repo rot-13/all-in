@@ -51,13 +51,18 @@
       = t('.empty')
 
 
+.container.padded
+  %br
+  - if browser.mobile?
+    = link_to whatsapp_link(@event), class: 'btn btn-whatsapp with-icon' do
+      %i.fa.fa-whatsapp
+      %span= t(".whatsapp")
+  - else
+    = label_tag :url, t('.share-url'), class: 'link'
+    = text_field_tag :url, event_url(@event)
+
 %footer
   .container.padded
-    - if browser.mobile?
-      = link_to whatsapp_link(@event), class: 'btn btn-whatsapp with-icon' do
-        %i.fa.fa-whatsapp
-        %span= t(".whatsapp")
-
     - if user_signed_in? && @event.organizer == current_user
       %br
       = link_to t('.edit'), edit_event_path(@event), class: 'link'

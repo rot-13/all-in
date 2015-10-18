@@ -315,15 +315,18 @@ input[type=submit] {
   padding: 20px 40px;
 }
 
+.text {
+  font-size: 14px;
+  color: #826a96;
+}
+
 .link {
   text-decoration: none;
   font-size: 14px;
-  color: #5E4F6E;
+  color: #4d415b;
 
   &.link-white {
     color: white;
-    //&:visted {
-    //  color: white;
-    //}
   }
 }
+

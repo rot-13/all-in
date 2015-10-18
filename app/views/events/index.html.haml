@@ -7,7 +7,15 @@
       = t('.new_event')
 
 .rows
+  - if @events.empty?
+    .row.empty
+      = t('.empty')
   - @events.each do |event|
     = link_to event, class: 'row' do
       %span.primary= event.title
       %span.secondary= event_date(event)
+
+%footer
+  .container.padded
+    %span.text= t('.logged_in_as', name: current_user.name)
+    = link_to t('.log_out'), logout_path, class: 'link'

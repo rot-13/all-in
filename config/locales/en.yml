@@ -14,6 +14,8 @@ en:
     index:
       title: "My Events"
       new_event: "Create a new event"
+      empty: "Create your first event and invite people"
+      logged_in_as: "Currently logged in as %{name}"
     show:
       sections:
         in:
@@ -36,8 +38,9 @@ en:
        other: "%{count} people attending"
       empty: "No one yet"
       whatsapp: "Share on Whatsapp"
+      share-url: 'Send this link to invite friends'
       footer:
-        home: "Create & See your events @ Gamenight.xyz"
+        home: "Create & see all your events @ Gamenight.xyz"
       edit: "Edit your event"
     new:
       title: "Create new event"
