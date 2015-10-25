@@ -20,7 +20,10 @@ gem 'font-awesome-rails', '~> 4.4.0.0'
 gem 'turbolinks'
 gem "haml-rails", "~> 0.9" # HAML GENERATORS
 
-gem "rails_12factor"
+group :production do
+  gem "rails_12factor"
+end
+
 gem 'browser'
 
 group :development, :test do

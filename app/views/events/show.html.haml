@@ -1,6 +1,11 @@
 %header.event-header
   .container.padded
-    = @event.date
+    - if @event.date.present?
+      .date
+        .month= @event.date.strftime("%b")
+        .day= @event.date.strftime("%d")
+        - if @event.time.present?
+          .time= @event.time.strftime("%H:%M")
     %h1= @event.title
     %p.organizer= t('.started_by', organizer: @event.organizer.name)
     %hr

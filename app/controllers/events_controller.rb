@@ -34,6 +34,7 @@ class EventsController < ApplicationController
   end
 
   def update
+    Rails.logger.info event_params[:time].inspect
     if @event.update(event_params)
       redirect_to @event, notice: 'Event was successfully updated.'
     else
@@ -50,6 +51,6 @@ class EventsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def event_params
-    params.require(:event).permit(:title)
+    params.require(:event).permit(:title, :date, :time)
   end
 end
